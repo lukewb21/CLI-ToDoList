@@ -47,12 +47,15 @@ public class Main {
                             break;
                         case 2:
                             addTask(list);
+                            list.save();
+                            System.console().readLine();
                             break;
                         case 3:
                             //editTask(list); // IMPLEMENT LATER
                             clearScreen();
                             showTasks(list);
                             System.out.println("Feature coming soon.");
+                            list.save();
                             System.console().readLine();
                             break;
                         case 4:
@@ -67,6 +70,7 @@ public class Main {
                                 choice = Integer.parseInt(input);
                             }
                             list.removeTask(choice - 1);
+                            list.save();
                             clearScreen();
                             showTasks(list);
                             System.out.println("Task " + choice + " removed.");
@@ -95,6 +99,7 @@ public class Main {
                     System.out.println("Task " + choice + " marked as incomplete.");
                 };
 
+                list.save();
                 System.console().readLine();
             } else {
                 System.out.println("Invalid Input");
@@ -188,7 +193,9 @@ public class Main {
     }
 
     public static void exitProgram(List list) {
-        list.saveList();
+        list.save();
+        clearScreen();
+        System.out.println("Tasks saved. See you next time!");
         System.exit(0);
     }
 

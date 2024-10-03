@@ -25,7 +25,7 @@ public class List implements Serializable{
         }
     }
 
-    public void saveList(){
+    public void save(){
         try {
             ObjectOutputStream out = new ObjectOutputStream(
                 new FileOutputStream("tasks.ser")
