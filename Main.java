@@ -1,6 +1,5 @@
 public class Main {
     public static void main(String[] args) {
-        // Create List
         List list = new List();
 
         // Main Event Loop
@@ -103,7 +102,6 @@ public class Main {
         }
     }
 
-    // Add Task
     public static void addTask(List list){
         clearScreen();
         System.out.println("Enter Task Name: ");
@@ -181,23 +179,19 @@ public class Main {
                 task.setDueDate(new DueDate(day, month, year));
             }
         }
-        // Add Task to List
         list.addTask(task);
     }
 
-    // Display List of Tasks
     public static void showTasks(List list) {
         System.out.println("Tasks:");
         System.out.println(list.toString());
     }
 
-    // Exit Program
     public static void exitProgram(List list) {
         list.saveList();
         System.exit(0);
     }
 
-    // Clear Screen
     public static void clearScreen() {
         System.out.print("\033\143");
     }

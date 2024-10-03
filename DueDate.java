@@ -27,12 +27,11 @@ public class DueDate implements Serializable{
         this.minute = 0;
     }
 
-    // To String Method
     public String toString() {
         if (hour == 0 && minute == 0) {
             return day + "/" + month + "/" + year;
         }
-        
+
         return day + "/" + month + "/" + year + " " + hour + ":" + minute;
     }
 }

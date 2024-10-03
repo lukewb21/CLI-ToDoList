@@ -11,10 +11,8 @@ public class List implements Serializable{
     
     ArrayList<Task> tasks;
 
-    // Load List of Tasks
     @SuppressWarnings("unchecked")
     public List(){
-        // Check for saved tasks and load
         File file = new File("tasks.ser");
         if (file.exists()) {
             try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(file))) {
@@ -27,10 +25,8 @@ public class List implements Serializable{
         }
     }
 
-    // Save List of Tasks
     public void saveList(){
         try {
-            // Save tasks
             ObjectOutputStream out = new ObjectOutputStream(
                 new FileOutputStream("tasks.ser")
             );
